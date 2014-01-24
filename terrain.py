@@ -59,9 +59,9 @@ class terrain():
             for y in range(self.height):
                 self.alter(x,y, pass_num)
                 
-    def output(self):
+    def __str__(self):
         for row in self.terrain:
-		    print(' '.join(row))
+		      print(' '.join(row))
 
 if __name__ == "__main__":
     import argparse
@@ -80,4 +80,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     random_terrain = terrain(args.width, args.height, args.water)
-    random_terrain.output()
+    print(random_terrain)
